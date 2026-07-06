@@ -21,3 +21,4 @@ HTML, CSS, JavaScript (vanilla, no framework)
 1. Pilih tema
 2. Edit nama, tanggal, foto, dan pesan di file HTML
 3. Ganti file audio di folder `audio/`
+4. Ganti file image di folder `img/`
