@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Birthday Web</title>
+    <link rel="stylesheet" href="index-B.css">
+</head>
+<body>
+    <div class="intro-screen">
+        <div class="bunting" id="bunting"></div>
+        <h1>🎉 Happy Birthday to You</h1>
+        <div class="cake">🎂</div>
+        <button class="btn-start" onclick="start()">Mulai</button>
+        <p class="press">press me :3</p>
+    </div>
+
+    <div class="main-content" id="maincontent">
+        <section class="hero">
+        <div class="hero-card">
+        <div class="foto-wrapper">
+        <img class="topi" src="img/party-hat.png" alt="topi">
+        <img class="foto" src="img/foto.png" alt="foto">
+        </div>
+        <div class="hero-text">
+        <h2 class="nama">your name</h2>
+        <p class="tanggal">📅 xx xx xxxx</p>
+        <div class="countdown">
+            <div class="countdown-box">
+                <span id="hari">00</span>
+                <p>Hari</p>
+            </div>
+            <div class="countdown-box">
+                <span id="jam">00</span>
+                <p>Jam</p>
+            </div>
+            <div class="countdown-box">
+                <span id="menit">00</span>
+                <p>Menit</p>
+            </div>
+            <div class="countdown-box">
+                <span id="detik">00</span>
+                <p>Detik</p>
+            </div>
+            </div>
+        </div>
+        </div>
+        <audio id="musikUltah" loop>
+            <source src="audio/musik.mp3" type="audio/mpeg">
+        </audio>
+    </section>
+
+    <section class="pesan">
+    <div class="amplop" id="amplop" onclick="bukaAmplop()">
+        <div class="amplop-tutup"></div>
+        <div class="amplop-badan">
+            <p>💌</p>
+        </div>
+    </div>
+    
+    <div class="isi-surat" id="isiSurat">
+        <h3>🎉 Untuk Kamu!</h3>
+        <p class="isi-pesan">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. At suscipit sint est, et excepturi explicabo dignissimos nostrum eius, ratione tenetur commodi perferendis expedita minus repudiandae veniam necessitatibus laudantium ab. Illum.
+        </p>
+    </div>
+</section>
+    <section class="penutup">
+        <h3>🎈 Semoga harimu secerah warna-warni ini! 🎈</h3>
+    </section>
+        <audio id="musikUltah" loop>
+          <source src="audio/musik.mp3" type="audio/mpeg">
+        </audio>
+    </div>
+
+    <script src="index-B.js"></script>
+</body>
+</html>
