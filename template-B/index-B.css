@@ -205,7 +205,7 @@ h1 {
     align-items: center;
     padding: 15px 20px;
     border-radius: 12px;
-    min-width: 60px;
+    min-width: 70px;
 }
 
 .countdown-box:nth-child(1) { background: rgba(255, 107, 107, 0.3); border: 2px solid #ff6b6b; }
