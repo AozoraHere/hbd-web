@@ -82,6 +82,17 @@ h1 {
     animation: swing 2s ease-in-out infinite;
 }
 
+@media (max-width: 480px) {
+    .bunting-card {
+        width: 22px;
+        height: 30px;
+        font-size: 12px;
+    }
+    .bunting {
+        gap: 3px;
+    }
+}
+
 .bunting-card:nth-child(odd) { animation-delay: 0.2s; }
 .bunting-card:nth-child(even) { animation-delay: 0.5s; }
 
