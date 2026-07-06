@@ -277,7 +277,6 @@ h1 {
     animation: balonNaik linear infinite;
     pointer-events: none;
     opacity: 0.7;
-    z-index: 1;
 }
 
 @keyframes balonNaik {
