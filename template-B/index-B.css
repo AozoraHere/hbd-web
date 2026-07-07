@@ -208,6 +208,19 @@ h1 {
     min-width: 70px;
 }
 
+@media (max-width: 480px) {
+    .countdown {
+        gap: 8px;
+    }
+    .countdown-box {
+        min-width: 58px;
+        padding: 10px 8px;
+    }
+    .countdown-box span {
+        font-size: 22px;
+    }
+}
+
 .countdown-box:nth-child(1) { background: rgba(255, 107, 107, 0.3); border: 2px solid #ff6b6b; }
 .countdown-box:nth-child(2) { background: rgba(247, 151, 30, 0.3); border: 2px solid #f7971e; }
 .countdown-box:nth-child(3) { background: rgba(107, 203, 119, 0.3); border: 2px solid #6bcb77; }
