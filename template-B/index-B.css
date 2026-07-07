@@ -130,6 +130,7 @@ h1 {
     transition: opacity 0.5s ease;
     overflow-y: auto;
     overflow-x: hidden;
+    position: relative;
 }
 
 @keyframes gradientShift {
