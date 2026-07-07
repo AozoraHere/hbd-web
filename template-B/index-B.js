@@ -58,8 +58,9 @@ function buatBalon() {
         balon.textContent = emojiBalon[Math.floor(Math.random() * emojiBalon.length)];
         balon.style.left = Math.random() * 100 + 'vw';
         balon.style.fontSize = (20 + Math.random() * 30) + 'px';
-        balon.style.animationDuration = (5 + Math.random() * 8) + 's';
-        balon.style.animationDelay = (Math.random() * 6) + 's';
+        const durasi = 5 + Math.random() * 8; 
+        balon.style.animationDuration = durasi + 's';
+        balon.style.animationDelay = '-' + (Math.random() *durasi) +'s';
         document.getElementById('maincontent').appendChild(balon);
     }
 }
