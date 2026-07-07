@@ -6,7 +6,7 @@
 
 body {
     font-family: 'Comic Neue', 'Comic Sans MS', cursive, sans-serif;
-    overflow: hidden;
+    overflow-x: hidden;
 }
 
 .intro-screen {
@@ -128,8 +128,7 @@ h1 {
     gap: 60px;
     opacity: 0;
     transition: opacity 0.5s ease;
-    overflow-y: auto;
-    overflow-x: hidden;
+    overflow: hidden;
     position: relative;
 }
 
