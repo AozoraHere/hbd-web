@@ -35,7 +35,7 @@ function start() {
     }, 500);
 }
 
-const tanggalUltah = new Date(2026, 6, 3);
+const tanggalUltah = new Date(1945, 7, 17);
 
 function hitungMundur() {
     const sekarang = new Date();
