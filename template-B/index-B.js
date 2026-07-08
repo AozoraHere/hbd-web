@@ -49,7 +49,6 @@ function buatPartikelKonten() {
 }
 
 function buatBalon() {
-    const warna = ['#ff6b6b', '#f7971e', '#ffd93d', '#6bcb77', '#4d96ff', '#c850c0'];
     const emojiBalon = ['🎈', '🎀', '🎊'];
     
     for (let i = 0; i < 15; i++) {
@@ -58,9 +57,9 @@ function buatBalon() {
         balon.textContent = emojiBalon[Math.floor(Math.random() * emojiBalon.length)];
         balon.style.left = Math.random() * 100 + 'vw';
         balon.style.fontSize = (20 + Math.random() * 30) + 'px';
-        const durasi = 5 + Math.random() * 8; 
+        const durasi = 5 + Math.random() * 8;
         balon.style.animationDuration = durasi + 's';
-        balon.style.animationDelay = '-' + (Math.random() *durasi) +'s';
+        balon.style.animationDelay = '-' + (Math.random() * durasi) + 's';
         document.getElementById('maincontent').appendChild(balon);
     }
 }
@@ -130,9 +129,8 @@ function buatConfetti() {
     }
 }
 
-
 function hariH() {
-    document.querySelector('.countdown').innerHTML = '<h2 style="color:#5a0080; font-size:23px;">🎉 Selamat Ulang Tahun! 🎉</h2>';
+    document.querySelector('.countdown').innerHTML = '<h2 style="color:#d4a843; font-size:28px;">🎉 Selamat Ulang Tahun! 🎉</h2>';
     buatConfetti();
 }
 
@@ -164,6 +162,3 @@ function bukaAmplop() {
         }, 500);
     }
 }
-
-
-

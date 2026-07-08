@@ -82,6 +82,9 @@ h1 {
     animation: swing 2s ease-in-out infinite;
 }
 
+.bunting-card:nth-child(odd) { animation-delay: 0.2s; }
+.bunting-card:nth-child(even) { animation-delay: 0.5s; }
+
 @media (max-width: 480px) {
     .bunting-card {
         width: 22px;
@@ -92,9 +95,6 @@ h1 {
         gap: 3px;
     }
 }
-
-.bunting-card:nth-child(odd) { animation-delay: 0.2s; }
-.bunting-card:nth-child(even) { animation-delay: 0.5s; }
 
 @keyframes swing {
     0%, 100% { transform: rotate(-5deg); }
@@ -171,14 +171,18 @@ h1 {
     z-index: 2;
 }
 
-.foto {
+.foto-placeholder {
     width: 150px;
     height: 150px;
     border-radius: 50%;
-    object-fit: cover;
     border: 4px solid #ffd93d;
     box-shadow: 0 0 20px rgba(255, 217, 61, 0.5);
-    display: block;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 70px;
+    background: rgba(255, 255, 255, 0.2);
+    flex-shrink: 0;
 }
 
 .nama {
@@ -208,19 +212,6 @@ h1 {
     min-width: 70px;
 }
 
-@media (max-width: 480px) {
-    .countdown {
-        gap: 8px;
-    }
-    .countdown-box {
-        min-width: 58px;
-        padding: 10px 8px;
-    }
-    .countdown-box span {
-        font-size: 22px;
-    }
-}
-
 .countdown-box:nth-child(1) { background: rgba(255, 107, 107, 0.3); border: 2px solid #ff6b6b; }
 .countdown-box:nth-child(2) { background: rgba(247, 151, 30, 0.3); border: 2px solid #f7971e; }
 .countdown-box:nth-child(3) { background: rgba(107, 203, 119, 0.3); border: 2px solid #6bcb77; }
@@ -235,6 +226,25 @@ h1 {
 .countdown-box p {
     font-size: 12px;
     color: #555;
+}
+
+@media (max-width: 480px) {
+    .countdown {
+        gap: 8px;
+    }
+    .countdown-box {
+        min-width: 58px;
+        padding: 10px 8px;
+    }
+    .countdown-box span {
+        font-size: 22px;
+    }
+    .hero {
+        text-align: center;
+    }
+    .hero-text {
+        align-items: center;
+    }
 }
 
 .pesan {
@@ -290,29 +300,13 @@ h1 {
     animation: balonNaik linear infinite;
     pointer-events: none;
     opacity: 0.7;
+    z-index: 1;
 }
 
 @keyframes balonNaik {
     0% { transform: translateY(0) rotate(-5deg); opacity: 0.7; }
     50% { transform: translateY(-50vh) rotate(5deg); opacity: 0.7; }
     100% { transform: translateY(-100vh) rotate(-5deg); opacity: 0; }
-}
-
-.foto-wrapper {
-    position: relative;
-    width: 150px;
-    height: 150px;
-    flex-shrink: 0;
-    display: inline-block;
-}
-
-.topi {
-    position: absolute;
-    width: 80px;
-    top: -55px;
-    left: -15px;
-    transform: rotate(-20deg);
-    z-index: 10;
 }
 
 .amplop {
@@ -370,13 +364,4 @@ h1 {
 @keyframes goyang {
     0%, 100% { transform: rotate(-5deg) scale(1.05); }
     50% { transform: rotate(5deg) scale(1.05); }
-}
-
-@media (max-width: 480px) {
-    .hero {
-        text-align: center;
-    }
-    .hero-text {
-        align-items: center;
-    }
 }

@@ -104,13 +104,17 @@ h1 {
     text-align: center;
 }
 
-.foto {
+.foto-placeholder {
     width: 150px;
     height: 150px;
     border-radius: 50%;
-    object-fit: cover;
     border: 3px solid #d4a843;
     box-shadow: 0 0 18px rgba(224, 154, 168, 0.45);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 70px;
+    background: rgba(212, 168, 67, 0.08);
 }
 
 .nama {
@@ -256,10 +260,6 @@ h1 {
     max-width: 600px;
     margin: 20px auto 0;
     animation: fadeInUp 0.6s ease forwards;
-    background: rgba(212, 168, 67, 0.06);
-    border: 1px solid rgba(212, 168, 67, 0.3);
-    border-radius: 12px;
-    padding: 30px 25px;
 }
 
 .isi-surat h3 {
