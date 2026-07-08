@@ -1,69 +1,34 @@
-function buatBunting() {
-    const bunting = document.getElementById('bunting');
-    const huruf = 'HAPPY BIRTHDAY'.split('');
-    const warna = ['#ff6b6b', '#f7971e', '#ffd93d', '#6bcb77', '#4d96ff', '#c850c0'];
-    
-    huruf.forEach((h, i) => {
-        const kartu = document.createElement('div');
-        kartu.classList.add('bunting-card');
-        kartu.textContent = h;
-        kartu.style.background = h === ' ' ? 'transparent' : warna[i % warna.length];
-        bunting.appendChild(kartu);
-    });
-}
+function makeParticle() {
+    const intro = document.querySelector('.intro-screen');
 
-buatBunting();
+    for (let i = 0; i < 30; i++) {
+        const particle = document.createElement('div');
+        particle.classList.add('particle');
 
-function buatConfettiIntro() {
-    const warna = ['#ff6b6b', '#f7971e', '#ffd93d', '#6bcb77', '#4d96ff', '#c850c0', 'white'];
-    const jumlah = 40;
-    
-    for (let i = 0; i < jumlah; i++) {
-        const confetti = document.createElement('div');
-        confetti.classList.add('confetti-intro');
-        confetti.style.left = Math.random() * 100 + 'vw';
-        confetti.style.background = warna[Math.floor(Math.random() * warna.length)];
-        confetti.style.animationDuration = (3 + Math.random() * 4) + 's';
-        confetti.style.animationDelay = (Math.random() * 4) + 's';
-        confetti.style.borderRadius = Math.random() > 0.5 ? '50%' : '2px';
-        document.querySelector('.intro-screen').appendChild(confetti);
+        particle.style.left = Math.random() * 100 + 'vw';
+        particle.style.animationDuration = (3 + Math.random() * 4) + 's';
+        particle.style.animationDelay = (Math.random() * 4) + 's';
+        
+        intro.appendChild(particle);
     }
 }
 
-buatConfettiIntro();
-
+makeParticle();
 function buatPartikelKonten() {
     const konten = document.getElementById('maincontent');
-    const warna = ['#ff6b6b', '#f7971e', '#ffd93d', '#6bcb77', '#4d96ff', '#c850c0'];
     
     for (let i = 0; i < 20; i++) {
         const partikel = document.createElement('div');
         partikel.classList.add('partikel-konten');
+        
         partikel.style.left = Math.random() * 100 + 'vw';
         partikel.style.top = Math.random() * 100 + '%';
-        partikel.style.background = warna[Math.floor(Math.random() * warna.length)];
         partikel.style.animationDuration = (4 + Math.random() * 6) + 's';
         partikel.style.animationDelay = (Math.random() * 5) + 's';
+        
         konten.appendChild(partikel);
     }
-}
-
-function buatBalon() {
-    const warna = ['#ff6b6b', '#f7971e', '#ffd93d', '#6bcb77', '#4d96ff', '#c850c0'];
-    const emojiBalon = ['🎈', '🎀', '🎊'];
-    
-    for (let i = 0; i < 15; i++) {
-        const balon = document.createElement('div');
-        balon.classList.add('balon');
-        balon.textContent = emojiBalon[Math.floor(Math.random() * emojiBalon.length)];
-        balon.style.left = Math.random() * 100 + 'vw';
-        balon.style.fontSize = (20 + Math.random() * 30) + 'px';
-        const durasi = 5 + Math.random() * 8; 
-        balon.style.animationDuration = durasi + 's';
-        balon.style.animationDelay = '-' + (Math.random() *durasi) +'s';
-        document.getElementById('maincontent').appendChild(balon);
-    }
-}
+}      
 
 function start() {
     const intro = document.querySelector('.intro-screen')
@@ -83,7 +48,6 @@ function start() {
             content.style.opacity = '1';
             cekScroll();
             buatPartikelKonten();
-            buatBalon();
         }, 50);
         
 
@@ -130,9 +94,8 @@ function buatConfetti() {
     }
 }
 
-
 function hariH() {
-    document.querySelector('.countdown').innerHTML = '<h2 style="color:#5a0080; font-size:23px;">🎉 Selamat Ulang Tahun! 🎉</h2>';
+    document.querySelector('.countdown').innerHTML = '<h2 style="color:#d4a843; font-size:28px;">🎉 Selamat Ulang Tahun! 🎉</h2>';
     buatConfetti();
 }
 
@@ -164,6 +127,4 @@ function bukaAmplop() {
         }, 500);
     }
 }
-
-
 
