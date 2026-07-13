@@ -92,7 +92,7 @@ function start() {
     
 }
 
-const tanggalUltah = new Date(2026, 5, 19); 
+const tanggalUltah = new Date(2045, 8, 17); 
 
 function hitungMundur() {
     const sekarang = new Date();
