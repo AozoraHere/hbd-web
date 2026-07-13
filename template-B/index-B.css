@@ -377,8 +377,8 @@ h1 {
 
 .topi {
     position: absolute;
-    top: -38px;
-    left: 50%;
+    top: -60px;
+    left: 40%;
     transform: translateX(-50%) rotate(-15deg);
     width: 70px;
     z-index: 3;
