@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>happy birthday web</title>
+    <link rel="stylesheet" href="index-A.css">
+</head>
+<body>
+    <div class="intro-screen">
+        <h1>Happy Birthday To You.</h1>
+        <div class="cake">🎂</div>
+        <button class="btn-start" onclick="start()">start</button>
+        <p class="press">press me here</p>
+    </div>
+
+    <div class="main-content" id="maincontent">
+        <section class="hero">
+        <div class="foto-placeholder">
+            <img src="img/image.jpg" alt="Foto">
+        </div>
+        <h2 class="nama">kitty</h2>
+        <p class="tanggal">📅 17 agustus 1945</p>
+        <div class="countdown">
+            <div class="countdown-box">
+                <span id="hari">00</span>
+                <p>Hari</p>
+            </div>
+            <div class="countdown-box">
+                <span id="jam">00</span>
+                <p>Jam</p>
+            </div>
+            <div class="countdown-box">
+                <span id="menit">00</span>
+                <p>Menit</p>
+            </div>
+            <div class="countdown-box">
+                <span id="detik">00</span>
+                <p>Detik</p>
+            </div>
+        </div>
+    </section>
+
+   <section class="pesan">
+    <div class="amplop" id="amplop" onclick="bukaAmplop()">
+        <div class="amplop-tutup"></div>
+        <div class="amplop-badan">
+            <p>💌</p>
+        </div>
+    </div>
+    
+    <div class="isi-surat" id="isiSurat">
+        <h3>💌 Untuk Kamu</h3>
+        <p class="isi-pesan">pesan bipbupbop</p>
+    </div>
+</section>
+
+    <section class="penutup">
+        <h3>🎉Selamat ya udah ulang tahun, cihuy</h3>
+    </section>
+        <div id="ytAudioContainer" style="position:absolute; width:0; height:0; overflow:hidden;"></div>
+    </div>
+
+    <script src="index-A.js"></script>
+    <script src="https://www.youtube.com/iframe_api"></script>
+</body>
+</html>
