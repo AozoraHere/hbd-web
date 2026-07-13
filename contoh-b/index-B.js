@@ -130,7 +130,7 @@ function buatConfetti() {
 }
 
 function hariH() {
-    document.querySelector('.countdown').innerHTML = '<h2 style="color:#d4a843; font-size:28px;">🎉 Selamat Ulang Tahun! 🎉</h2>';
+    document.querySelector('.countdown').innerHTML = '<div class="ucapan-wrap"><span class="confetti-samping">🎉</span><h2 class="ucapan-hariH">Selamat Ulang Tahun!</h2><span class="confetti-samping">🎉</span></div>';
     buatConfetti();
 }
 

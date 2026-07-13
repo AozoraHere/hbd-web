@@ -281,9 +281,51 @@ h1 {
     padding-bottom: 40px;
 }
 
-.penutup h3 {
+.penutup-wrap,
+.ucapan-wrap {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+}
+
+.penutup-teks {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 4px;
+}
+
+.baris-teks {
     color: #5a0080;
+    font-size: 22px;
+    line-height: 1.4;
+}
+
+.confetti-samping {
+    font-size: 28px;
+    flex-shrink: 0;
+}
+
+.ucapan-hariH {
+    color: #d4a843;
     font-size: 24px;
+}
+
+@media (max-width: 480px) {
+    .baris-teks {
+        font-size: 16px;
+    }
+    .ucapan-hariH {
+        font-size: 18px;
+    }
+    .confetti-samping {
+        font-size: 20px;
+    }
+    .penutup-wrap,
+    .ucapan-wrap {
+        gap: 6px;
+    }
 }
 
 .partikel-konten {
