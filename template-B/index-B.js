@@ -94,12 +94,22 @@ function start() {
 
 const tanggalUltah = new Date(2020, 8, 17); 
 
+let sudahRayakan = false;
+
 function hitungMundur() {
     const sekarang = new Date();
     const selisih = tanggalUltah - sekarang;
 
     if (selisih <= 0) {
-        hariH(); 
+        document.getElementById('hari').textContent = '00';
+        document.getElementById('jam').textContent = '00';
+        document.getElementById('menit').textContent = '00';
+        document.getElementById('detik').textContent = '00';
+
+        if (!sudahRayakan) {
+            hariH();
+            sudahRayakan = true;
+        }
         return;
     }
 
@@ -130,7 +140,8 @@ function buatConfetti() {
 }
 
 function hariH() {
-    document.querySelector('.countdown').innerHTML = '<div class="ucapan-wrap"><span class="confetti-samping">🎉</span><h2 class="ucapan-hariH">Selamat Ulang Tahun!</h2><span class="confetti-samping">🎉</span></div>';
+    document.getElementById('countdown').classList.add('berkedip');
+    document.getElementById('ucapanHariH').style.display = 'flex';
     buatConfetti();
 }
 

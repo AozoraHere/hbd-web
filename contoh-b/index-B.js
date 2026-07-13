@@ -1,3 +1,50 @@
+let ytPlayer = null;
+let ytLoopChecker = null;
+let mauPutarMusik = false;
+
+const YT_VIDEO_ID = 'ZbZSe6N_BXs'; // Happy - Pharrell Williams (Official Music Video)
+const YT_START = 33; // detik mulai bagian reff (cek & sesuaikan sendiri)
+const YT_END = 63;   // detik selesai, abis ini otomatis balik ke YT_START
+
+function onYouTubeIframeAPIReady() {
+    ytPlayer = new YT.Player('ytAudioContainer', {
+        height: '0',
+        width: '0',
+        videoId: YT_VIDEO_ID,
+        playerVars: {
+            start: YT_START,
+            controls: 0,
+            disablekb: 1,
+            playsinline: 1
+        },
+        events: {
+            onReady: () => {
+                if (mauPutarMusik) mainkanMusik();
+            },
+            onStateChange: onYtStateChange
+        }
+    });
+}
+
+function onYtStateChange(e) {
+    if (e.data === YT.PlayerState.PLAYING) {
+        clearInterval(ytLoopChecker);
+        ytLoopChecker = setInterval(() => {
+            if (ytPlayer.getCurrentTime() >= YT_END) {
+                ytPlayer.seekTo(YT_START, true);
+            }
+        }, 500);
+    }
+}
+
+function mainkanMusik() {
+    mauPutarMusik = true;
+    if (ytPlayer && ytPlayer.playVideo) {
+        ytPlayer.seekTo(YT_START, true);
+        ytPlayer.playVideo();
+    }
+}
+
 function buatBunting() {
     const bunting = document.getElementById('bunting');
     const huruf = 'HAPPY BIRTHDAY'.split('');
@@ -75,8 +122,7 @@ function start() {
         intro.style.display = 'none';
         content.style.display = 'flex';
         
-        const music = document.getElementById('musikUltah');
-        music.play();
+        mainkanMusik();
 
         setTimeout(() => {
             content.style.opacity = '1';
@@ -94,12 +140,22 @@ function start() {
 
 const tanggalUltah = new Date(2020, 8, 17); 
 
+let sudahRayakan = false;
+
 function hitungMundur() {
     const sekarang = new Date();
     const selisih = tanggalUltah - sekarang;
 
     if (selisih <= 0) {
-        hariH(); 
+        document.getElementById('hari').textContent = '00';
+        document.getElementById('jam').textContent = '00';
+        document.getElementById('menit').textContent = '00';
+        document.getElementById('detik').textContent = '00';
+
+        if (!sudahRayakan) {
+            hariH();
+            sudahRayakan = true;
+        }
         return;
     }
 
@@ -130,7 +186,8 @@ function buatConfetti() {
 }
 
 function hariH() {
-    document.querySelector('.countdown').innerHTML = '<div class="ucapan-wrap"><span class="confetti-samping">🎉</span><h2 class="ucapan-hariH">Selamat Ulang Tahun!</h2><span class="confetti-samping">🎉</span></div>';
+    document.getElementById('countdown').classList.add('berkedip');
+    document.getElementById('ucapanHariH').style.display = 'flex';
     buatConfetti();
 }
 
