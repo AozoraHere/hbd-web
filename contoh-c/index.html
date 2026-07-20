@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Birthday Web</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600&family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="index-C.css">
+</head>
+<body>
+    <div class="intro-screen">
+        <p class="eyebrow">a little something for</p>
+        <h1>Happy Birthday</h1>
+        <div class="divider"></div>
+        <button class="btn-start" onclick="start()">Buka</button>
+        <p class="press">tap to begin</p>
+    </div>
+
+    <div class="main-content" id="maincontent">
+        <section class="hero">
+            <div class="hero-card">
+                <div class="foto-wrapper">
+                    <svg class="rotating-text" viewBox="0 0 220 220">
+                        <defs>
+                            <path id="circlePath" d="M 110,110 m -95,0 a 95,95 0 1,1 190,0 a 95,95 0 1,1 -190,0" />
+                        </defs>
+                        <text font-size="13" letter-spacing="3">
+                            <textPath href="#circlePath">&#10022; HAPPY BIRTHDAY &#10022; HAPPY BIRTHDAY </textPath>
+                        </text>
+                    </svg>
+                    <div class="foto-placeholder">
+                        <img src="img/foto.png" alt="Foto">
+                    </div>
+                </div>
+                <h2 class="nama">Nama Orang</h2>
+                <p class="tanggal">DD Month YYYY</p>
+                <div class="countdown">
+                    <div class="countdown-box">
+                        <span id="hari">00</span>
+                        <p>Hari</p>
+                    </div>
+                    <div class="countdown-box">
+                        <span id="jam">00</span>
+                        <p>Jam</p>
+                    </div>
+                    <div class="countdown-box">
+                        <span id="menit">00</span>
+                        <p>Menit</p>
+                    </div>
+                    <div class="countdown-box">
+                        <span id="detik">00</span>
+                        <p>Detik</p>
+                    </div>
+                </div>
+            </div>
+            <div id="ytAudioContainer" style="position:absolute; width:0; height:0; overflow:hidden;"></div>
+        </section>
+
+        <section class="pesan">
+            <div class="amplop" id="amplop" onclick="bukaAmplop()">
+                <div class="amplop-tutup"></div>
+                <div class="amplop-badan">
+                    <p>&#9993;</p>
+                </div>
+            </div>
+
+            <div class="isi-surat" id="isiSurat">
+                <h3>Untuk Kamu</h3>
+                <p class="isi-pesan" id="isiPesan" data-text="Tulis pesan panjang di sini..."></p>
+            </div>
+        </section>
+
+        <section class="penutup">
+            <div class="divider small"></div>
+            <h3>Selamat Ulang Tahun</h3>
+        </section>
+    </div>
+
+    <script src="index-C.js"></script>
+    <script src="https://www.youtube.com/iframe_api"></script>
+</body>
+</html>
