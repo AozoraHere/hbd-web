@@ -1,3 +1,68 @@
+let ytPlayer = null;
+let ytLoopChecker = null;
+let mauPutarMusik = false;
+
+const YT_VIDEO_ID = '2Vv-BfVoq4g'; // Perfect - Ed Sheeran (Official Music Video)
+const YT_START = 120; // detik mulai bagian reff (cek & sesuaikan sendiri)
+const YT_END = 150;   // detik selesai, abis ini otomatis balik ke YT_START
+
+function onYouTubeIframeAPIReady() {
+    ytPlayer = new YT.Player('ytAudioContainer', {
+        height: '0',
+        width: '0',
+        videoId: YT_VIDEO_ID,
+        playerVars: {
+            start: YT_START,
+            controls: 0,
+            disablekb: 1,
+            playsinline: 1
+        },
+        events: {
+            onReady: () => {
+                if (mauPutarMusik) mainkanMusik();
+            },
+            onStateChange: onYtStateChange
+        }
+    });
+}
+
+function onYtStateChange(e) {
+    if (e.data === YT.PlayerState.PLAYING) {
+        clearInterval(ytLoopChecker);
+        ytLoopChecker = setInterval(() => {
+            if (ytPlayer.getCurrentTime() >= YT_END) {
+                ytPlayer.seekTo(YT_START, true);
+            }
+        }, 500);
+    }
+}
+
+function mainkanMusik() {
+    mauPutarMusik = true;
+    if (ytPlayer && ytPlayer.playVideo) {
+        ytPlayer.seekTo(YT_START, true);
+        ytPlayer.playVideo();
+    }
+}
+
+const fotoList = ['img/foto1.png', 'img/foto2.png', 'img/foto3.png', 'img/foto4.png']; // tambah/kurang sesuai jumlah foto kamu
+let fotoIndex = 0;
+
+function mulaiSlideFoto() {
+    if (fotoList.length <= 1) return; // kalau cuma 1 foto, nggak perlu slide
+
+    setInterval(() => {
+        const fotoEl = document.getElementById('fotoSlide');
+        fotoEl.style.opacity = '0';
+
+        setTimeout(() => {
+            fotoIndex = (fotoIndex + 1) % fotoList.length;
+            fotoEl.src = fotoList[fotoIndex];
+            fotoEl.style.opacity = '1';
+        }, 500); // nunggu fade-out kelar dulu baru ganti gambar
+    }, 3500); // ganti foto tiap 3.5 detik, sesuaikan sendiri kalau mau lebih cepat/lambat
+}
+
 function start() {
     const intro = document.querySelector('.intro-screen');
     const content = document.getElementById('maincontent');
@@ -8,12 +73,12 @@ function start() {
         intro.style.display = 'none';
         content.style.display = 'flex';
 
-        const music = document.getElementById('musikUltah');
-        music.play();
+        mainkanMusik();
 
         setTimeout(() => {
             content.style.opacity = '1';
             tampilkanSection();
+            mulaiSlideFoto();
         }, 50);
 
         setInterval(hitungMundur, 1000);
