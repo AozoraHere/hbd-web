@@ -2,9 +2,9 @@ let ytPlayer = null;
 let ytLoopChecker = null;
 let mauPutarMusik = false;
 
-const YT_VIDEO_ID = '2Vv-BfVoq4g'; // Perfect - Ed Sheeran (Official Music Video)
-const YT_START = 120; // detik mulai bagian reff (cek & sesuaikan sendiri)
-const YT_END = 150;   // detik selesai, abis ini otomatis balik ke YT_START
+const YT_VIDEO_ID = 'MlThQTo6D8A'; // Until I Found You - Stephen Sanchez (Official Audio)
+const YT_START = 20; 
+const YT_END = 50;   
 
 function onYouTubeIframeAPIReady() {
     ytPlayer = new YT.Player('ytAudioContainer', {
@@ -109,7 +109,7 @@ function hitungMundur() {
 }
 
 function hariH() {
-    document.querySelector('.countdown').innerHTML = '<h2 style="font-family: \'Cormorant Garamond\', serif; color:#3a352f; font-size:26px; font-weight:600;">Selamat Ulang Tahun</h2>';
+    document.querySelector('.countdown').innerHTML = '<h2 style="font-family: \'Cormorant Garamond\', serif; color:#3a352f; font-size:26px; font-weight:600;">Happy Birthday To You</h2>';
 }
 
 function tampilkanSection() {
