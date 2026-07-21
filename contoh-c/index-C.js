@@ -3,8 +3,8 @@ let ytLoopChecker = null;
 let mauPutarMusik = false;
 
 const YT_VIDEO_ID = 'MlThQTo6D8A'; // Until I Found You - Stephen Sanchez (Official Audio)
-const YT_START = 48; 
-const YT_END = 83;   
+const YT_START = 104; 
+const YT_END = 143;   
 
 function onYouTubeIframeAPIReady() {
     ytPlayer = new YT.Player('ytAudioContainer', {
